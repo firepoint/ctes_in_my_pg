@@ -9,7 +9,7 @@ Since I only ever use [CTEs][2] from that gem, I thought I'd rip out the code fo
 [Now supports Rails 6!](https://github.com/kmurph73/ctes_in_my_pg/pull/4)
 
 ```ruby
-gem 'ctes_in_my_pg', github: 'kmurph73/ctes_in_my_pg'
+gem 'ctes_in_my_pg', github: 'firepoint/ctes_in_my_pg'
 ```
 
 [1]: https://github.com/DockYard/postgres_ext
