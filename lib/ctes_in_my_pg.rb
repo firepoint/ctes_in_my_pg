@@ -12,7 +12,7 @@ module ActiveRecord
 end
 
 module ActiveRecord::Querying
-  delegate :with_cte, to: :all
+  delegate :with, to: :all
 end
 
 module ActiveRecord
@@ -50,7 +50,7 @@ module ActiveRecord
       @values[:recursive]
     end
 
-    def with_cte(opts = :chain, *rest)
+    def with(opts = :chain, *rest)
       if opts == :chain
         WithChain.new(spawn)
       elsif opts.blank?
@@ -60,7 +60,7 @@ module ActiveRecord
       end
     end
 
-    def with_cte!(opts = :chain, *rest) # :nodoc:
+    def with!(opts = :chain, *rest) # :nodoc:
       if opts == :chain
         WithChain.new(self)
       else
@@ -70,8 +70,8 @@ module ActiveRecord
 
     end
 
-    def build_arel(aliases)
-      arel = super(aliases)
+    def build_arel
+      arel = super
 
       build_with(arel) if @values[:with]
 
